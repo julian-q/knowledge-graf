@@ -1,0 +1,790 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d1" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="Ben Smith">
+  <data key="d0">Ben Smith</data>
+</node>
+<node id="Ride of a Lifetime"/>
+<node id="Disney">
+  <data key="d0">Disney</data>
+</node>
+<node id="ABC">
+  <data key="d0">ABC</data>
+</node>
+<node id="Marvel">
+  <data key="d0">Marvel</data>
+</node>
+<node id="Lucasfilm">
+  <data key="d0">Lucasfilm</data>
+</node>
+<node id="CNBC">
+  <data key="d0">CNBC</data>
+</node>
+<node id="Bill Gates">
+  <data key="d0">Bill Gates</data>
+</node>
+<node id="Ray">
+  <data key="d0">Ray</data>
+</node>
+<node id="Steve">
+  <data key="d0">Steve</data>
+</node>
+<node id="In Re Trados">
+  <data key="d0">In Re Trados</data>
+</node>
+<node id="Secrets of Sand Hill Road"/>
+<node id="Carsanaro">
+  <data key="d0">Carsanaro</data>
+</node>
+<node id="Bloodhound Technologies">
+  <data key="d0">Bloodhound Technologies</data>
+</node>
+<node id="Revlon, Inc">
+  <data key="d0">Revlon, Inc</data>
+</node>
+<node id="MacAndrews &amp; Forbes Holdings, Inc">
+  <data key="d0">MacAndrews &amp; Forbes Holdings, Inc</data>
+</node>
+<node id="Skulls and Bones">
+  <data key="d0">Skulls and Bones</data>
+</node>
+<node id="What It Takes: Lessons in the Pursuit of Excellence"/>
+<node id="China">
+  <data key="d0">China</data>
+</node>
+<node id="Pete">
+  <data key="d0">Pete</data>
+</node>
+<node id="Blackstone">
+  <data key="d0">Blackstone</data>
+</node>
+<node id="Upper East Side">
+  <data key="d0">Upper East Side</data>
+</node>
+<node id="Ray Dalio">
+  <data key="d0">Ray Dalio</data>
+</node>
+<node id="Court">
+  <data key="d0">Court</data>
+</node>
+<node id="My Own Words by Ruth Bader Ginsburg"/>
+<node id="RBG">
+  <data key="d0">RBG</data>
+</node>
+<node id="Supreme Court">
+  <data key="d0">Supreme Court</data>
+</node>
+<node id="AP">
+  <data key="d0">AP</data>
+</node>
+<node id="Ta">
+  <data key="d0">Ta</data>
+</node>
+<node id="Between the World and Me by Ta-Nehisi Coates"/>
+<node id="Sam">
+  <data key="d0">Sam</data>
+</node>
+<node id="African">
+  <data key="d0">African</data>
+</node>
+<node id="Americans">
+  <data key="d0">Americans</data>
+</node>
+<node id="Co">
+  <data key="d0">Co</data>
+</node>
+<node id="Tara Westover">
+  <data key="d0">Tara Westover</data>
+</node>
+<node id="Educated by Tara Westover"/>
+<node id="Midwest">
+  <data key="d0">Midwest</data>
+</node>
+<node id="Mormon">
+  <data key="d0">Mormon</data>
+</node>
+<node id="Jennifer Morton">
+  <data key="d0">Jennifer Morton</data>
+</node>
+<node id="Morton">
+  <data key="d0">Morton</data>
+</node>
+<node id="Dan">
+  <data key="d0">Dan</data>
+</node>
+<node id="Chinese">
+  <data key="d0">Chinese</data>
+</node>
+<node id="AI Superpowers by Kai Fu Lee"/>
+<node id="American">
+  <data key="d0">American</data>
+</node>
+<node id="Kai">
+  <data key="d0">Kai</data>
+</node>
+<node id="AI">
+  <data key="d0">AI</data>
+</node>
+<node id="US">
+  <data key="d0">US</data>
+</node>
+<node id="Silicon Valley">
+  <data key="d0">Silicon Valley</data>
+</node>
+<node id="America">
+  <data key="d0">America</data>
+</node>
+<node id="Lee">
+  <data key="d0">Lee</data>
+</node>
+<node id="Latin">
+  <data key="d0">Latin</data>
+</node>
+<node id="The Twelve Caesars by Suetonius"/>
+<node id="De Rerum Natura">
+  <data key="d0">De Rerum Natura</data>
+</node>
+<node id="On the Nature of Things by Lucretius"/>
+<node id="Ellen">
+  <data key="d0">Ellen</data>
+</node>
+<node id="Reset by Ellen Pao"/>
+<node id="Princeton">
+  <data key="d0">Princeton</data>
+</node>
+<node id="Harvard Business School">
+  <data key="d0">Harvard Business School</data>
+</node>
+<node id="Ivy League">
+  <data key="d0">Ivy League</data>
+</node>
+<node id="Northern New Jersey">
+  <data key="d0">Northern New Jersey</data>
+</node>
+<node id="Modern Love: True Stories of Love, Loss, and Redemption "/>
+<node id="Amy Krouse Rosenthal">
+  <data key="d0">Amy Krouse Rosenthal</data>
+</node>
+<node id="Jason">
+  <data key="d0">Jason</data>
+</node>
+<node id="Aye">
+  <data key="d0">Aye</data>
+</node>
+<node id="Robert">
+  <data key="d0">Robert</data>
+</node>
+<node id="You Know You Want This: by Kristen Roupenian"/>
+<node id="Google">
+  <data key="d0">Google</data>
+</node>
+<node id="Brotopia by Emily Chang"/>
+<node id="Chang">
+  <data key="d0">Chang</data>
+</node>
+<node id="Jack">
+  <data key="d0">Jack</data>
+</node>
+<node id="The Privileged Poor by Anthony Abraham Jack"/>
+<node id="Ken Liu">
+  <data key="d0">Ken Liu</data>
+</node>
+<node id="The Hidden Girl and Other Stories by Ken Liu"/>
+<node id="Liu">
+  <data key="d0">Liu</data>
+</node>
+<node id="Chen Chen">
+  <data key="d0">Chen Chen</data>
+</node>
+<node id="William Carlos Williams">
+  <data key="d0">William Carlos Williams</data>
+</node>
+<node id="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen"/>
+<node id="Lev">
+  <data key="d0">Lev</data>
+</node>
+<node id="Au">
+  <data key="d0">Au</data>
+</node>
+<node id="Max">
+  <data key="d0">Max</data>
+</node>
+<node id="Edo">
+  <data key="d0">Edo</data>
+</node>
+<node id="Did">
+  <data key="d0">Did</data>
+</node>
+<node id="Goodreads">
+  <data key="d0">Goodreads</data>
+</node>
+<node id="Bay Area">
+  <data key="d0">Bay Area</data>
+</node>
+<node id="Shoe Dog by Phil Knight"/>
+<node id="Phil Knight">
+  <data key="d0">Phil Knight</data>
+</node>
+<node id="Knight">
+  <data key="d0">Knight</data>
+</node>
+<node id="Nike">
+  <data key="d0">Nike</data>
+</node>
+<node id="Johnson">
+  <data key="d0">Johnson</data>
+</node>
+<node id="East Coast">
+  <data key="d0">East Coast</data>
+</node>
+<node id="Su">
+  <data key="d0">Su</data>
+</node>
+<node id="Harry Beard">
+  <data key="d0">Harry Beard</data>
+</node>
+<node id="X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard"/>
+<node id="National Lampoon">
+  <data key="d0">National Lampoon</data>
+</node>
+<node id="Digital Minimalism">
+  <data key="d0">Digital Minimalism</data>
+</node>
+<node id="Digital Minimalism by Cal Newport"/>
+<node id="Power">
+  <data key="d0">Power</data>
+</node>
+<node id="The Education of an Idealist by Samantha Power"/>
+<node id="Obama">
+  <data key="d0">Obama</data>
+</node>
+<node id="NSC">
+  <data key="d0">NSC</data>
+</node>
+<node id="Hillary Clinton">
+  <data key="d0">Hillary Clinton</data>
+</node>
+<node id="Ireland">
+  <data key="d0">Ireland</data>
+</node>
+<node id="John Kerry">
+  <data key="d0">John Kerry</data>
+</node>
+<node id="Samantha Power">
+  <data key="d0">Samantha Power</data>
+</node>
+<node id="Drake">
+  <data key="d0">Drake</data>
+</node>
+<node id="Scott Tu">
+  <data key="d0">Scott Tu</data>
+</node>
+<node id="Chip">
+  <data key="d0">Chip</data>
+</node>
+<node id="Dan Heath">
+  <data key="d0">Dan Heath</data>
+</node>
+<node id="Kay">
+  <data key="d0">Kay</data>
+</node>
+<node id="UN">
+  <data key="d0">UN</data>
+</node>
+<node id="Syria">
+  <data key="d0">Syria</data>
+</node>
+<node id="The Paper Menagerie and Other Stories by Ken Liu"/>
+<node id="Catullus 3">
+  <data key="d0">Catullus 3</data>
+</node>
+<node id="Ka">
+  <data key="d0">Ka</data>
+</node>
+<node id="When Breath Becomes Air by Paul Kalanithi"/>
+<node id="Mad">
+  <data key="d0">Mad</data>
+</node>
+<node id="Talking to Strangers by Malcolm Gladwell"/>
+<node id="Hitler">
+  <data key="d0">Hitler</data>
+</node>
+<node id="Chamberlain">
+  <data key="d0">Chamberlain</data>
+</node>
+<node id="Sylvia Plat">
+  <data key="d0">Sylvia Plat</data>
+</node>
+<node id="Buzzfeed News">
+  <data key="d0">Buzzfeed News</data>
+</node>
+<node id="Know My Name by Chanel Miller"/>
+<node id="Emily Do">
+  <data key="d0">Emily Do</data>
+</node>
+<node id="Jamba Juice">
+  <data key="d0">Jamba Juice</data>
+</node>
+<node id="Panda Express">
+  <data key="d0">Panda Express</data>
+</node>
+<node id="Brock Turner">
+  <data key="d0">Brock Turner</data>
+</node>
+<node id="Pet">
+  <data key="d0">Pet</data>
+</node>
+<node id="The Unbearable Lightness of Being by Milan Kundera"/>
+<node id="Grand March">
+  <data key="d0">Grand March</data>
+</node>
+<node id="Sa">
+  <data key="d0">Sa</data>
+</node>
+<node id="Karen">
+  <data key="d0">Karen</data>
+</node>
+<node id="Tomas">
+  <data key="d0">Tomas</data>
+</node>
+<node id="Mao">
+  <data key="d0">Mao</data>
+</node>
+<node id="Apple">
+  <data key="d0">Apple</data>
+</node>
+<node id="Steve Jobs by Walter Isaacson "/>
+<node id="Homebrew Computer Club">
+  <data key="d0">Homebrew Computer Club</data>
+</node>
+<node id="Job">
+  <data key="d0">Job</data>
+</node>
+<node id="Jon">
+  <data key="d0">Jon</data>
+</node>
+<node id="Stanford">
+  <data key="d0">Stanford</data>
+</node>
+<node id="Steve Job">
+  <data key="d0">Steve Job</data>
+</node>
+<node id="Elizabeth Holmes">
+  <data key="d0">Elizabeth Holmes</data>
+</node>
+<node id="David Reynolds">
+  <data key="d0">David Reynolds</data>
+</node>
+<node id="Jersey">
+  <data key="d0">Jersey</data>
+</node>
+<node id="William Deresiewicz">
+  <data key="d0">William Deresiewicz</data>
+</node>
+<node id="Excellent Sheep by William Deresiewicz"/>
+<node id="Der">
+  <data key="d0">Der</data>
+</node>
+<edge source="Ride of a Lifetime" target="Ben Smith">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Disney">
+  <data key="d1">4</data>
+</edge>
+<edge source="Ride of a Lifetime" target="ABC">
+  <data key="d1">3</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Marvel">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Lucasfilm">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="CNBC">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Bill Gates">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Ray">
+  <data key="d1">1</data>
+</edge>
+<edge source="Ride of a Lifetime" target="Steve">
+  <data key="d1">1</data>
+</edge>
+<edge source="Secrets of Sand Hill Road" target="In Re Trados">
+  <data key="d1">1</data>
+</edge>
+<edge source="Secrets of Sand Hill Road" target="Carsanaro">
+  <data key="d1">1</data>
+</edge>
+<edge source="Secrets of Sand Hill Road" target="Bloodhound Technologies">
+  <data key="d1">1</data>
+</edge>
+<edge source="Secrets of Sand Hill Road" target="Revlon, Inc">
+  <data key="d1">1</data>
+</edge>
+<edge source="Secrets of Sand Hill Road" target="MacAndrews &amp; Forbes Holdings, Inc">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="Skulls and Bones">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="China">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="Pete">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="Blackstone">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="Upper East Side">
+  <data key="d1">1</data>
+</edge>
+<edge source="What It Takes: Lessons in the Pursuit of Excellence" target="Ray Dalio">
+  <data key="d1">1</data>
+</edge>
+<edge source="My Own Words by Ruth Bader Ginsburg" target="Court">
+  <data key="d1">1</data>
+</edge>
+<edge source="My Own Words by Ruth Bader Ginsburg" target="RBG">
+  <data key="d1">1</data>
+</edge>
+<edge source="My Own Words by Ruth Bader Ginsburg" target="Supreme Court">
+  <data key="d1">1</data>
+</edge>
+<edge source="My Own Words by Ruth Bader Ginsburg" target="AP">
+  <data key="d1">1</data>
+</edge>
+<edge source="Between the World and Me by Ta-Nehisi Coates" target="Ta">
+  <data key="d1">1</data>
+</edge>
+<edge source="Between the World and Me by Ta-Nehisi Coates" target="Sam">
+  <data key="d1">2</data>
+</edge>
+<edge source="Between the World and Me by Ta-Nehisi Coates" target="African">
+  <data key="d1">2</data>
+</edge>
+<edge source="Between the World and Me by Ta-Nehisi Coates" target="Americans">
+  <data key="d1">2</data>
+</edge>
+<edge source="Between the World and Me by Ta-Nehisi Coates" target="Co">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Tara Westover">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Midwest">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Mormon">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Jennifer Morton">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Morton">
+  <data key="d1">1</data>
+</edge>
+<edge source="Educated by Tara Westover" target="Dan">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="Chinese">
+  <data key="d1">3</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="American">
+  <data key="d1">2</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="Kai">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="China">
+  <data key="d1">3</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="AI">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="US">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="Silicon Valley">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="America">
+  <data key="d1">1</data>
+</edge>
+<edge source="AI Superpowers by Kai Fu Lee" target="Lee">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Twelve Caesars by Suetonius" target="Latin">
+  <data key="d1">1</data>
+</edge>
+<edge source="On the Nature of Things by Lucretius" target="De Rerum Natura">
+  <data key="d1">1</data>
+</edge>
+<edge source="On the Nature of Things by Lucretius" target="Latin">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Ellen">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Princeton">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Harvard Business School">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Ivy League">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Chinese">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="Northern New Jersey">
+  <data key="d1">1</data>
+</edge>
+<edge source="Reset by Ellen Pao" target="American">
+  <data key="d1">1</data>
+</edge>
+<edge source="Modern Love: True Stories of Love, Loss, and Redemption " target="Silicon Valley">
+  <data key="d1">1</data>
+</edge>
+<edge source="Modern Love: True Stories of Love, Loss, and Redemption " target="Amy Krouse Rosenthal">
+  <data key="d1">1</data>
+</edge>
+<edge source="Modern Love: True Stories of Love, Loss, and Redemption " target="Jason">
+  <data key="d1">1</data>
+</edge>
+<edge source="Modern Love: True Stories of Love, Loss, and Redemption " target="Aye">
+  <data key="d1">1</data>
+</edge>
+<edge source="You Know You Want This: by Kristen Roupenian" target="Robert">
+  <data key="d1">1</data>
+</edge>
+<edge source="Brotopia by Emily Chang" target="Google">
+  <data key="d1">2</data>
+</edge>
+<edge source="Brotopia by Emily Chang" target="Chang">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Privileged Poor by Anthony Abraham Jack" target="Jack">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Hidden Girl and Other Stories by Ken Liu" target="Ken Liu">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Hidden Girl and Other Stories by Ken Liu" target="Liu">
+  <data key="d1">2</data>
+</edge>
+<edge source="The Hidden Girl and Other Stories by Ken Liu" target="Chen Chen">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="William Carlos Williams">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Lev">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Au">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Max">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Edo">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Did">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Chen Chen">
+  <data key="d1">5</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Chinese">
+  <data key="d1">1</data>
+</edge>
+<edge source="When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen" target="Goodreads">
+  <data key="d1">1</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Bay Area">
+  <data key="d1">1</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Phil Knight">
+  <data key="d1">1</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Knight">
+  <data key="d1">4</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Nike">
+  <data key="d1">5</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Johnson">
+  <data key="d1">1</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="East Coast">
+  <data key="d1">1</data>
+</edge>
+<edge source="Shoe Dog by Phil Knight" target="Su">
+  <data key="d1">1</data>
+</edge>
+<edge source="X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard" target="Harry Beard">
+  <data key="d1">1</data>
+</edge>
+<edge source="X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard" target="National Lampoon">
+  <data key="d1">1</data>
+</edge>
+<edge source="X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard" target="Latin">
+  <data key="d1">3</data>
+</edge>
+<edge source="Digital Minimalism by Cal Newport" target="Digital Minimalism">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Power">
+  <data key="d1">2</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="American">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Obama">
+  <data key="d1">3</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="NSC">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Hillary Clinton">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Ireland">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="John Kerry">
+  <data key="d1">2</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Samantha Power">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Drake">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Scott Tu">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Chip">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Dan Heath">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Kay">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Americans">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="UN">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Education of an Idealist by Samantha Power" target="Syria">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Paper Menagerie and Other Stories by Ken Liu" target="Ken Liu">
+  <data key="d1">3</data>
+</edge>
+<edge source="The Paper Menagerie and Other Stories by Ken Liu" target="Catullus 3">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Paper Menagerie and Other Stories by Ken Liu" target="Latin">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Paper Menagerie and Other Stories by Ken Liu" target="Chinese">
+  <data key="d1">1</data>
+</edge>
+<edge source="When Breath Becomes Air by Paul Kalanithi" target="Ka">
+  <data key="d1">2</data>
+</edge>
+<edge source="Talking to Strangers by Malcolm Gladwell" target="Mad">
+  <data key="d1">1</data>
+</edge>
+<edge source="Talking to Strangers by Malcolm Gladwell" target="Hitler">
+  <data key="d1">1</data>
+</edge>
+<edge source="Talking to Strangers by Malcolm Gladwell" target="Chamberlain">
+  <data key="d1">1</data>
+</edge>
+<edge source="Talking to Strangers by Malcolm Gladwell" target="Co">
+  <data key="d1">1</data>
+</edge>
+<edge source="Talking to Strangers by Malcolm Gladwell" target="Sylvia Plat">
+  <data key="d1">1</data>
+</edge>
+<edge source="Know My Name by Chanel Miller" target="Buzzfeed News">
+  <data key="d1">1</data>
+</edge>
+<edge source="Know My Name by Chanel Miller" target="Emily Do">
+  <data key="d1">1</data>
+</edge>
+<edge source="Know My Name by Chanel Miller" target="Jamba Juice">
+  <data key="d1">1</data>
+</edge>
+<edge source="Know My Name by Chanel Miller" target="Panda Express">
+  <data key="d1">1</data>
+</edge>
+<edge source="Know My Name by Chanel Miller" target="Brock Turner">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Pet">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Grand March">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Sa">
+  <data key="d1">2</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Karen">
+  <data key="d1">1</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Tomas">
+  <data key="d1">3</data>
+</edge>
+<edge source="The Unbearable Lightness of Being by Milan Kundera" target="Mao">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Apple">
+  <data key="d1">3</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Homebrew Computer Club">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Job">
+  <data key="d1">2</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Jon">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Stanford">
+  <data key="d1">2</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Steve Job">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Elizabeth Holmes">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="David Reynolds">
+  <data key="d1">1</data>
+</edge>
+<edge source="Steve Jobs by Walter Isaacson " target="Jersey">
+  <data key="d1">1</data>
+</edge>
+<edge source="Excellent Sheep by William Deresiewicz" target="William Deresiewicz">
+  <data key="d1">1</data>
+</edge>
+<edge source="Excellent Sheep by William Deresiewicz" target="America">
+  <data key="d1">1</data>
+</edge>
+<edge source="Excellent Sheep by William Deresiewicz" target="Der">
+  <data key="d1">2</data>
+</edge>
+</graph></graphml>

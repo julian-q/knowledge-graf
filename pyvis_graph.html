@@ -1,0 +1,204 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+        #loadingBar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 500px;
+            height: 500px;
+            background-color:rgba(200,200,200,0.8);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            opacity:1;
+        }
+
+        #bar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:20px;
+            height:20px;
+            margin:auto auto auto auto;
+            border-radius:11px;
+            border:2px solid rgba(30,30,30,0.05);
+            background: rgb(0, 173, 246); /* Old browsers */
+            box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+        }
+
+        #border {
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:500px;
+            height:23px;
+            margin:auto auto auto auto;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            border-radius:10px;
+        }
+
+        #text {
+            position:absolute;
+            top:8px;
+            left:530px;
+            width:30px;
+            height:50px;
+            margin:auto auto auto auto;
+            font-size:22px;
+            color: #000000;
+        }
+
+        div.outerBorder {
+            position:relative;
+            top:400px;
+            width:600px;
+            height:44px;
+            margin:auto auto auto auto;
+            border:8px solid rgba(0,0,0,0.1);
+            background: rgb(252,252,252); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+            border-radius:72px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+<div id="loadingBar">
+    <div class="outerBorder">
+        <div id="text">0%</div>
+        <div id="border">
+            <div id="bar"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Ride of a Lifetime", "label": "Ride of a Lifetime", "shape": "dot", "size": 10}, {"id": "Ben Smith", "label": "Ben Smith", "shape": "dot", "size": 10}, {"id": "Disney", "label": "Disney", "shape": "dot", "size": 10}, {"id": "ABC", "label": "ABC", "shape": "dot", "size": 10}, {"id": "Marvel", "label": "Marvel", "shape": "dot", "size": 10}, {"id": "Lucasfilm", "label": "Lucasfilm", "shape": "dot", "size": 10}, {"id": "CNBC", "label": "CNBC", "shape": "dot", "size": 10}, {"id": "Bill Gates", "label": "Bill Gates", "shape": "dot", "size": 10}, {"id": "Ray", "label": "Ray", "shape": "dot", "size": 10}, {"id": "Steve", "label": "Steve", "shape": "dot", "size": 10}, {"id": "Secrets of Sand Hill Road", "label": "Secrets of Sand Hill Road", "shape": "dot", "size": 10}, {"id": "In Re Trado", "label": "In Re Trado", "shape": "dot", "size": 10}, {"id": "Carsanaro", "label": "Carsanaro", "shape": "dot", "size": 10}, {"id": "Bloodhound Technology", "label": "Bloodhound Technology", "shape": "dot", "size": 10}, {"id": "Revlon, Inc", "label": "Revlon, Inc", "shape": "dot", "size": 10}, {"id": "MacAndrews \u0026 Forbes Holdings, Inc", "label": "MacAndrews \u0026 Forbes Holdings, Inc", "shape": "dot", "size": 10}, {"id": "What It Takes: Lessons in the Pursuit of Excellence", "label": "What It Takes: Lessons in the Pursuit of Excellence", "shape": "dot", "size": 10}, {"id": "Skulls and Bone", "label": "Skulls and Bone", "shape": "dot", "size": 10}, {"id": "China", "label": "China", "shape": "dot", "size": 10}, {"id": "Pete", "label": "Pete", "shape": "dot", "size": 10}, {"id": "Blackstone", "label": "Blackstone", "shape": "dot", "size": 10}, {"id": "Upper East Side", "label": "Upper East Side", "shape": "dot", "size": 10}, {"id": "Ray Dalio", "label": "Ray Dalio", "shape": "dot", "size": 10}, {"id": "My Own Words by Ruth Bader Ginsburg", "label": "My Own Words by Ruth Bader Ginsburg", "shape": "dot", "size": 10}, {"id": "Court", "label": "Court", "shape": "dot", "size": 10}, {"id": "RBG", "label": "RBG", "shape": "dot", "size": 10}, {"id": "Supreme Court", "label": "Supreme Court", "shape": "dot", "size": 10}, {"id": "AP", "label": "AP", "shape": "dot", "size": 10}, {"id": "Between the World and Me by Ta-Nehisi Coates", "label": "Between the World and Me by Ta-Nehisi Coates", "shape": "dot", "size": 10}, {"id": "Ta", "label": "Ta", "shape": "dot", "size": 10}, {"id": "Sam", "label": "Sam", "shape": "dot", "size": 10}, {"id": "African", "label": "African", "shape": "dot", "size": 10}, {"id": "American", "label": "American", "shape": "dot", "size": 10}, {"id": "Co", "label": "Co", "shape": "dot", "size": 10}, {"id": "Educated by Tara Westover", "label": "Educated by Tara Westover", "shape": "dot", "size": 10}, {"id": "Tara Westover", "label": "Tara Westover", "shape": "dot", "size": 10}, {"id": "Midwest", "label": "Midwest", "shape": "dot", "size": 10}, {"id": "Mormon", "label": "Mormon", "shape": "dot", "size": 10}, {"id": "Jennifer Morton", "label": "Jennifer Morton", "shape": "dot", "size": 10}, {"id": "Morton", "label": "Morton", "shape": "dot", "size": 10}, {"id": "Dan", "label": "Dan", "shape": "dot", "size": 10}, {"id": "AI Superpowers by Kai Fu Lee", "label": "AI Superpowers by Kai Fu Lee", "shape": "dot", "size": 10}, {"id": "Chinese", "label": "Chinese", "shape": "dot", "size": 10}, {"id": "Kai", "label": "Kai", "shape": "dot", "size": 10}, {"id": "AI", "label": "AI", "shape": "dot", "size": 10}, {"id": "ME", "label": "ME", "shape": "dot", "size": 10}, {"id": "Silicon Valley", "label": "Silicon Valley", "shape": "dot", "size": 10}, {"id": "America", "label": "America", "shape": "dot", "size": 10}, {"id": "Lee", "label": "Lee", "shape": "dot", "size": 10}, {"id": "The Twelve Caesars by Suetonius", "label": "The Twelve Caesars by Suetonius", "shape": "dot", "size": 10}, {"id": "Latin", "label": "Latin", "shape": "dot", "size": 10}, {"id": "On the Nature of Things by Lucretius", "label": "On the Nature of Things by Lucretius", "shape": "dot", "size": 10}, {"id": "De Rerum Natura", "label": "De Rerum Natura", "shape": "dot", "size": 10}, {"id": "Reset by Ellen Pao", "label": "Reset by Ellen Pao", "shape": "dot", "size": 10}, {"id": "Ellen", "label": "Ellen", "shape": "dot", "size": 10}, {"id": "Princeton", "label": "Princeton", "shape": "dot", "size": 10}, {"id": "Harvard Business School", "label": "Harvard Business School", "shape": "dot", "size": 10}, {"id": "Ivy League", "label": "Ivy League", "shape": "dot", "size": 10}, {"id": "Northern New Jersey", "label": "Northern New Jersey", "shape": "dot", "size": 10}, {"id": "Modern Love: True Stories of Love, Loss, and Redemption ", "label": "Modern Love: True Stories of Love, Loss, and Redemption ", "shape": "dot", "size": 10}, {"id": "Amy Krouse Rosenthal", "label": "Amy Krouse Rosenthal", "shape": "dot", "size": 10}, {"id": "Jason", "label": "Jason", "shape": "dot", "size": 10}, {"id": "Aye", "label": "Aye", "shape": "dot", "size": 10}, {"id": "You Know You Want This: by Kristen Roupenian", "label": "You Know You Want This: by Kristen Roupenian", "shape": "dot", "size": 10}, {"id": "Robert", "label": "Robert", "shape": "dot", "size": 10}, {"id": "Brotopia by Emily Chang", "label": "Brotopia by Emily Chang", "shape": "dot", "size": 10}, {"id": "Google", "label": "Google", "shape": "dot", "size": 10}, {"id": "Chang", "label": "Chang", "shape": "dot", "size": 10}, {"id": "The Privileged Poor by Anthony Abraham Jack", "label": "The Privileged Poor by Anthony Abraham Jack", "shape": "dot", "size": 10}, {"id": "Jack", "label": "Jack", "shape": "dot", "size": 10}, {"id": "The Hidden Girl and Other Stories by Ken Liu", "label": "The Hidden Girl and Other Stories by Ken Liu", "shape": "dot", "size": 10}, {"id": "Ken Liu", "label": "Ken Liu", "shape": "dot", "size": 10}, {"id": "Liu", "label": "Liu", "shape": "dot", "size": 10}, {"id": "Chen Chen", "label": "Chen Chen", "shape": "dot", "size": 10}, {"id": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "shape": "dot", "size": 10}, {"id": "William Carlos Williams", "label": "William Carlos Williams", "shape": "dot", "size": 10}, {"id": "Lev", "label": "Lev", "shape": "dot", "size": 10}, {"id": "Au", "label": "Au", "shape": "dot", "size": 10}, {"id": "Max", "label": "Max", "shape": "dot", "size": 10}, {"id": "Edo", "label": "Edo", "shape": "dot", "size": 10}, {"id": "Did", "label": "Did", "shape": "dot", "size": 10}, {"id": "Goodread", "label": "Goodread", "shape": "dot", "size": 10}, {"id": "Shoe Dog by Phil Knight", "label": "Shoe Dog by Phil Knight", "shape": "dot", "size": 10}, {"id": "Bay Area", "label": "Bay Area", "shape": "dot", "size": 10}, {"id": "Phil Knight", "label": "Phil Knight", "shape": "dot", "size": 10}, {"id": "Knight", "label": "Knight", "shape": "dot", "size": 10}, {"id": "Nike", "label": "Nike", "shape": "dot", "size": 10}, {"id": "Johnson", "label": "Johnson", "shape": "dot", "size": 10}, {"id": "East Coast", "label": "East Coast", "shape": "dot", "size": 10}, {"id": "Su", "label": "Su", "shape": "dot", "size": 10}, {"id": "X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard", "label": "X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard", "shape": "dot", "size": 10}, {"id": "Harry Beard", "label": "Harry Beard", "shape": "dot", "size": 10}, {"id": "National Lampoon", "label": "National Lampoon", "shape": "dot", "size": 10}, {"id": "Digital Minimalism by Cal Newport", "label": "Digital Minimalism by Cal Newport", "shape": "dot", "size": 10}, {"id": "Digital Minimalism", "label": "Digital Minimalism", "shape": "dot", "size": 10}, {"id": "The Education of an Idealist by Samantha Power", "label": "The Education of an Idealist by Samantha Power", "shape": "dot", "size": 10}, {"id": "Power", "label": "Power", "shape": "dot", "size": 10}, {"id": "Obama", "label": "Obama", "shape": "dot", "size": 10}, {"id": "NSC", "label": "NSC", "shape": "dot", "size": 10}, {"id": "Hillary Clinton", "label": "Hillary Clinton", "shape": "dot", "size": 10}, {"id": "Ireland", "label": "Ireland", "shape": "dot", "size": 10}, {"id": "John Kerry", "label": "John Kerry", "shape": "dot", "size": 10}, {"id": "Samantha Power", "label": "Samantha Power", "shape": "dot", "size": 10}, {"id": "Drake", "label": "Drake", "shape": "dot", "size": 10}, {"id": "Scott Tu", "label": "Scott Tu", "shape": "dot", "size": 10}, {"id": "Chip", "label": "Chip", "shape": "dot", "size": 10}, {"id": "Dan Heath", "label": "Dan Heath", "shape": "dot", "size": 10}, {"id": "Kay", "label": "Kay", "shape": "dot", "size": 10}, {"id": "UN", "label": "UN", "shape": "dot", "size": 10}, {"id": "Syria", "label": "Syria", "shape": "dot", "size": 10}, {"id": "The Paper Menagerie and Other Stories by Ken Liu", "label": "The Paper Menagerie and Other Stories by Ken Liu", "shape": "dot", "size": 10}, {"id": "Catullus 3", "label": "Catullus 3", "shape": "dot", "size": 10}, {"id": "When Breath Becomes Air by Paul Kalanithi", "label": "When Breath Becomes Air by Paul Kalanithi", "shape": "dot", "size": 10}, {"id": "Ka", "label": "Ka", "shape": "dot", "size": 10}, {"id": "Talking to Strangers by Malcolm Gladwell", "label": "Talking to Strangers by Malcolm Gladwell", "shape": "dot", "size": 10}, {"id": "Mad", "label": "Mad", "shape": "dot", "size": 10}, {"id": "Hitler", "label": "Hitler", "shape": "dot", "size": 10}, {"id": "Chamberlain", "label": "Chamberlain", "shape": "dot", "size": 10}, {"id": "Sylvia Plat", "label": "Sylvia Plat", "shape": "dot", "size": 10}, {"id": "Know My Name by Chanel Miller", "label": "Know My Name by Chanel Miller", "shape": "dot", "size": 10}, {"id": "Buzzfeed News", "label": "Buzzfeed News", "shape": "dot", "size": 10}, {"id": "Emily Do", "label": "Emily Do", "shape": "dot", "size": 10}, {"id": "Jamba Juice", "label": "Jamba Juice", "shape": "dot", "size": 10}, {"id": "Panda Expres", "label": "Panda Expres", "shape": "dot", "size": 10}, {"id": "Brock Turner", "label": "Brock Turner", "shape": "dot", "size": 10}, {"id": "The Unbearable Lightness of Being by Milan Kundera", "label": "The Unbearable Lightness of Being by Milan Kundera", "shape": "dot", "size": 10}, {"id": "Pet", "label": "Pet", "shape": "dot", "size": 10}, {"id": "Grand March", "label": "Grand March", "shape": "dot", "size": 10}, {"id": "Sa", "label": "Sa", "shape": "dot", "size": 10}, {"id": "Karen", "label": "Karen", "shape": "dot", "size": 10}, {"id": "Tomas", "label": "Tomas", "shape": "dot", "size": 10}, {"id": "Mao", "label": "Mao", "shape": "dot", "size": 10}, {"id": "Steve Jobs by Walter Isaacson ", "label": "Steve Jobs by Walter Isaacson ", "shape": "dot", "size": 10}, {"id": "Apple", "label": "Apple", "shape": "dot", "size": 10}, {"id": "Homebrew Computer Club", "label": "Homebrew Computer Club", "shape": "dot", "size": 10}, {"id": "Job", "label": "Job", "shape": "dot", "size": 10}, {"id": "Jon", "label": "Jon", "shape": "dot", "size": 10}, {"id": "Stanford", "label": "Stanford", "shape": "dot", "size": 10}, {"id": "Steve Job", "label": "Steve Job", "shape": "dot", "size": 10}, {"id": "Elizabeth Holmes", "label": "Elizabeth Holmes", "shape": "dot", "size": 10}, {"id": "David Reynolds", "label": "David Reynolds", "shape": "dot", "size": 10}, {"id": "Jersey", "label": "Jersey", "shape": "dot", "size": 10}, {"id": "Excellent Sheep by William Deresiewicz", "label": "Excellent Sheep by William Deresiewicz", "shape": "dot", "size": 10}, {"id": "William Deresiewicz", "label": "William Deresiewicz", "shape": "dot", "size": 10}, {"id": "Der", "label": "Der", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Ride of a Lifetime", "label": 1, "to": "Ben Smith", "weight": 1}, {"from": "Ride of a Lifetime", "label": 4, "to": "Disney", "weight": 4}, {"from": "Ride of a Lifetime", "label": 3, "to": "ABC", "weight": 3}, {"from": "Ride of a Lifetime", "label": 1, "to": "Marvel", "weight": 1}, {"from": "Ride of a Lifetime", "label": 1, "to": "Lucasfilm", "weight": 1}, {"from": "Ride of a Lifetime", "label": 1, "to": "CNBC", "weight": 1}, {"from": "Ride of a Lifetime", "label": 1, "to": "Bill Gates", "weight": 1}, {"from": "Ride of a Lifetime", "label": 1, "to": "Ray", "weight": 1}, {"from": "Ride of a Lifetime", "label": 1, "to": "Steve", "weight": 1}, {"from": "Secrets of Sand Hill Road", "label": 1, "to": "In Re Trado", "weight": 1}, {"from": "Secrets of Sand Hill Road", "label": 1, "to": "Carsanaro", "weight": 1}, {"from": "Secrets of Sand Hill Road", "label": 1, "to": "Bloodhound Technology", "weight": 1}, {"from": "Secrets of Sand Hill Road", "label": 1, "to": "Revlon, Inc", "weight": 1}, {"from": "Secrets of Sand Hill Road", "label": 1, "to": "MacAndrews \u0026 Forbes Holdings, Inc", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "Skulls and Bone", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "China", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "Pete", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "Blackstone", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "Upper East Side", "weight": 1}, {"from": "What It Takes: Lessons in the Pursuit of Excellence", "label": 1, "to": "Ray Dalio", "weight": 1}, {"from": "My Own Words by Ruth Bader Ginsburg", "label": 1, "to": "Court", "weight": 1}, {"from": "My Own Words by Ruth Bader Ginsburg", "label": 1, "to": "RBG", "weight": 1}, {"from": "My Own Words by Ruth Bader Ginsburg", "label": 1, "to": "Supreme Court", "weight": 1}, {"from": "My Own Words by Ruth Bader Ginsburg", "label": 1, "to": "AP", "weight": 1}, {"from": "Between the World and Me by Ta-Nehisi Coates", "label": 1, "to": "Ta", "weight": 1}, {"from": "Between the World and Me by Ta-Nehisi Coates", "label": 2, "to": "Sam", "weight": 2}, {"from": "Between the World and Me by Ta-Nehisi Coates", "label": 2, "to": "African", "weight": 2}, {"from": "Between the World and Me by Ta-Nehisi Coates", "label": 2, "to": "American", "weight": 2}, {"from": "Between the World and Me by Ta-Nehisi Coates", "label": 1, "to": "Co", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Tara Westover", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Midwest", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Mormon", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Jennifer Morton", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Morton", "weight": 1}, {"from": "Educated by Tara Westover", "label": 1, "to": "Dan", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 3, "to": "Chinese", "weight": 3}, {"from": "AI Superpowers by Kai Fu Lee", "label": 2, "to": "American", "weight": 2}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "Kai", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 3, "to": "China", "weight": 3}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "AI", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "ME", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "Silicon Valley", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "America", "weight": 1}, {"from": "AI Superpowers by Kai Fu Lee", "label": 1, "to": "Lee", "weight": 1}, {"from": "The Twelve Caesars by Suetonius", "label": 1, "to": "Latin", "weight": 1}, {"from": "On the Nature of Things by Lucretius", "label": 1, "to": "De Rerum Natura", "weight": 1}, {"from": "On the Nature of Things by Lucretius", "label": 1, "to": "Latin", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Ellen", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Princeton", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Harvard Business School", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Ivy League", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Chinese", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "Northern New Jersey", "weight": 1}, {"from": "Reset by Ellen Pao", "label": 1, "to": "American", "weight": 1}, {"from": "Modern Love: True Stories of Love, Loss, and Redemption ", "label": 1, "to": "Silicon Valley", "weight": 1}, {"from": "Modern Love: True Stories of Love, Loss, and Redemption ", "label": 1, "to": "Amy Krouse Rosenthal", "weight": 1}, {"from": "Modern Love: True Stories of Love, Loss, and Redemption ", "label": 1, "to": "Jason", "weight": 1}, {"from": "Modern Love: True Stories of Love, Loss, and Redemption ", "label": 1, "to": "Aye", "weight": 1}, {"from": "You Know You Want This: by Kristen Roupenian", "label": 1, "to": "Robert", "weight": 1}, {"from": "Brotopia by Emily Chang", "label": 2, "to": "Google", "weight": 2}, {"from": "Brotopia by Emily Chang", "label": 1, "to": "Chang", "weight": 1}, {"from": "The Privileged Poor by Anthony Abraham Jack", "label": 1, "to": "Jack", "weight": 1}, {"from": "The Hidden Girl and Other Stories by Ken Liu", "label": 1, "to": "Ken Liu", "weight": 1}, {"from": "The Hidden Girl and Other Stories by Ken Liu", "label": 2, "to": "Liu", "weight": 2}, {"from": "The Hidden Girl and Other Stories by Ken Liu", "label": 1, "to": "Chen Chen", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "William Carlos Williams", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Lev", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Au", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Max", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Edo", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Did", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 5, "to": "Chen Chen", "weight": 5}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Chinese", "weight": 1}, {"from": "When I Grow Up I Want to Be a List of Further Possibilities by Chen Chen", "label": 1, "to": "Goodread", "weight": 1}, {"from": "Shoe Dog by Phil Knight", "label": 1, "to": "Bay Area", "weight": 1}, {"from": "Shoe Dog by Phil Knight", "label": 1, "to": "Phil Knight", "weight": 1}, {"from": "Shoe Dog by Phil Knight", "label": 4, "to": "Knight", "weight": 4}, {"from": "Shoe Dog by Phil Knight", "label": 5, "to": "Nike", "weight": 5}, {"from": "Shoe Dog by Phil Knight", "label": 1, "to": "Johnson", "weight": 1}, {"from": "Shoe Dog by Phil Knight", "label": 1, "to": "East Coast", "weight": 1}, {"from": "Shoe Dog by Phil Knight", "label": 1, "to": "Su", "weight": 1}, {"from": "X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard", "label": 1, "to": "Harry Beard", "weight": 1}, {"from": "X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard", "label": 1, "to": "National Lampoon", "weight": 1}, {"from": "X-treme: All the Latin You Need to Know for Surviving the 21st Century by Henry Beard", "label": 3, "to": "Latin", "weight": 3}, {"from": "Digital Minimalism by Cal Newport", "label": 1, "to": "Digital Minimalism", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 2, "to": "Power", "weight": 2}, {"from": "The Education of an Idealist by Samantha Power", "label": 2, "to": "American", "weight": 2}, {"from": "The Education of an Idealist by Samantha Power", "label": 3, "to": "Obama", "weight": 3}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "NSC", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Hillary Clinton", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Ireland", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 2, "to": "John Kerry", "weight": 2}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Samantha Power", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Drake", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Scott Tu", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Chip", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Dan Heath", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Kay", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "UN", "weight": 1}, {"from": "The Education of an Idealist by Samantha Power", "label": 1, "to": "Syria", "weight": 1}, {"from": "The Paper Menagerie and Other Stories by Ken Liu", "label": 3, "to": "Ken Liu", "weight": 3}, {"from": "The Paper Menagerie and Other Stories by Ken Liu", "label": 1, "to": "Catullus 3", "weight": 1}, {"from": "The Paper Menagerie and Other Stories by Ken Liu", "label": 1, "to": "Latin", "weight": 1}, {"from": "The Paper Menagerie and Other Stories by Ken Liu", "label": 1, "to": "Chinese", "weight": 1}, {"from": "When Breath Becomes Air by Paul Kalanithi", "label": 2, "to": "Ka", "weight": 2}, {"from": "Talking to Strangers by Malcolm Gladwell", "label": 1, "to": "Mad", "weight": 1}, {"from": "Talking to Strangers by Malcolm Gladwell", "label": 1, "to": "Hitler", "weight": 1}, {"from": "Talking to Strangers by Malcolm Gladwell", "label": 1, "to": "Chamberlain", "weight": 1}, {"from": "Talking to Strangers by Malcolm Gladwell", "label": 1, "to": "Co", "weight": 1}, {"from": "Talking to Strangers by Malcolm Gladwell", "label": 1, "to": "Sylvia Plat", "weight": 1}, {"from": "Know My Name by Chanel Miller", "label": 1, "to": "Buzzfeed News", "weight": 1}, {"from": "Know My Name by Chanel Miller", "label": 1, "to": "Emily Do", "weight": 1}, {"from": "Know My Name by Chanel Miller", "label": 1, "to": "Jamba Juice", "weight": 1}, {"from": "Know My Name by Chanel Miller", "label": 1, "to": "Panda Expres", "weight": 1}, {"from": "Know My Name by Chanel Miller", "label": 1, "to": "Brock Turner", "weight": 1}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 1, "to": "Pet", "weight": 1}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 1, "to": "Grand March", "weight": 1}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 2, "to": "Sa", "weight": 2}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 1, "to": "Karen", "weight": 1}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 3, "to": "Tomas", "weight": 3}, {"from": "The Unbearable Lightness of Being by Milan Kundera", "label": 1, "to": "Mao", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 3, "to": "Apple", "weight": 3}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "Homebrew Computer Club", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 2, "to": "Job", "weight": 2}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "Jon", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 2, "to": "Stanford", "weight": 2}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "Steve Job", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "Elizabeth Holmes", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "David Reynolds", "weight": 1}, {"from": "Steve Jobs by Walter Isaacson ", "label": 1, "to": "Jersey", "weight": 1}, {"from": "Excellent Sheep by William Deresiewicz", "label": 1, "to": "William Deresiewicz", "weight": 1}, {"from": "Excellent Sheep by William Deresiewicz", "label": 1, "to": "America", "weight": 1}, {"from": "Excellent Sheep by William Deresiewicz", "label": 2, "to": "Der", "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+        network.on("stabilizationProgress", function(params) {
+      		document.getElementById('loadingBar').removeAttribute("style");
+	        var maxWidth = 496;
+	        var minWidth = 20;
+	        var widthFactor = params.iterations/params.total;
+	        var width = Math.max(minWidth,maxWidth * widthFactor);
+
+	        document.getElementById('bar').style.width = width + 'px';
+	        document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+	    });
+	    network.once("stabilizationIterationsDone", function() {
+	        document.getElementById('text').innerHTML = '100%';
+	        document.getElementById('bar').style.width = '496px';
+	        document.getElementById('loadingBar').style.opacity = 0;
+	        // really clean the dom element
+	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	    });
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

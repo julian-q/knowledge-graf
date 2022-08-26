@@ -1,6 +1,5 @@
-
 Promise.all([
-  fetch('graphs/notes_new.json', {mode: 'no-cors'})
+  fetch('graphs/notes.json', {mode: 'no-cors'})
     .then(function(res) {
       return res.json()
     })
@@ -71,7 +70,7 @@ Promise.all([
         fit: true,
       
         // Padding on fit
-        padding: 30,
+        padding: 10,
       
         // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
         boundingBox: undefined,

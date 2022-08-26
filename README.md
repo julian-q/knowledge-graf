@@ -9,7 +9,7 @@ Knowledge graph (well, entity co-occurence graph) generation from webcrawled nat
 # Clone, install dependencies
 git clone https://github.com/julian-q/kgene.git
 cd kgene
-conda env create -f kg_env.py
+conda env create -f kg_env.yml
 conda activate kg
 brew install node
 npm install http-server -g

@@ -11,6 +11,7 @@ Knowledge graph (well, entity co-occurence graph) generation from webcrawled nat
 git clone https://github.com/julian-q/kgene.git
 cd kgene
 conda env create -f kg_env.yml
+conda activate kg
 npm install http-server -g
 
 # Crawl the desired webpage

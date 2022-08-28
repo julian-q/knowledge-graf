@@ -5,13 +5,11 @@ Knowledge graph (well, entity co-occurence graph) generation from webcrawled nat
 ![](img/cover.png)
 
 ### Usage
-**Dependencies:** Anaconda, Node.js
 ```bash
 # Clone, install dependencies
 git clone https://github.com/julian-q/kgene.git
 cd kgene
-conda env create -f kg_env.yml
-conda activate kg
+pip install -r requirements.txt
 npm install http-server -g
 
 # Crawl the desired webpage

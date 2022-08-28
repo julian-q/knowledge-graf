@@ -1,6 +1,6 @@
 # KGene
 
-Knowledge graph (well, entity co-occurence graph) generation from webcrawled natural language! [Usage](#Usage)
+Knowledge graph generation from webcrawled natural language! [Usage](#Usage)
 
 ![](img/cover.png)
 

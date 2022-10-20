@@ -13,7 +13,7 @@ pip install -r requirements.txt
 npm install http-server -g
 
 # Crawl the desired webpage
-scrapy runspider spider.py -a start_urls=['https://www.deepmind.com/blog'] -o webcrawling/notes.jl
+scrapy runspider spider.py -a start_url='https://www.deepmind.com/blog' -o webcrawling/notes.jl
 
 # Extract and save entities
 python ner.py

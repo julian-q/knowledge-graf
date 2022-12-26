@@ -44,6 +44,8 @@ for index, row in tqdm(data.iterrows()):
 		else:
 			G[row['title']][name]['weight'] += 1
 
+nx.write_graphml(G, 'graphs/notes.graphml')
+
 with open('graphs/notes.json', 'w') as f:
 	json.dump(nx.cytoscape_data(G), f)
 

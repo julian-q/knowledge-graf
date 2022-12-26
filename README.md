@@ -18,6 +18,9 @@ scrapy crawl notes -a start_url=https://acquired.fm/episodes -a allowed_domain=a
 # Extract and save entities
 python ner.py
 
+# (Optional) Remove nodes that contain common keywords (passed as args)
+python remove_nodes.py ben david marvel
+
 # Launch graph view (this might take a moment to load)
 http-server
 ```

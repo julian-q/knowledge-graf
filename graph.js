@@ -12,16 +12,16 @@ Promise.all([
         {
           selector: 'node',
           style: {
-            'width': ele => ele.outdegree() * 2 + ele.indegree() * 5,
-            'height': ele => ele.outdegree() * 2 + ele.indegree() * 5,
+            'width': ele => ele.outdegree() * 2 + ele.indegree() * 10,
+            'height': ele => ele.outdegree() * 2 + ele.indegree() * 10,
             'background-color': 'data(color)',
             'label': 'data(id)',
             'font-size': '10px',
-            'text-border-width': '2px',
-            'text-border-color': 'black',
-            'text-border-opacity': '1',
+            'text-outline-width': '3px',
+            'text-outline-color': 'black',
+            'text-outline-opacity': '1',
             'text-background-color': 'black',
-            'text-background-opacity': '0.4',
+            'text-background-opacity': '0',
             'color': 'white',
             'shape': 'data(shape)',
             'border-style': 'solid',
@@ -31,7 +31,7 @@ Promise.all([
             'text-valign': 'center',
             'text-halign': 'center',
             'text-wrap': 'ellipsis',
-            'text-max-width': ele => ele.outdegree() * 2 + ele.indegree() * 5,
+            'text-max-width': 100,
           }
         },
 
@@ -81,10 +81,10 @@ Promise.all([
         refresh: 50,
       
         // Whether to fit the network view after when done
-        fit: false,
+        fit: true,
       
         // Padding on fit
-        padding: 20,
+        padding: 5,
       
         // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
         boundingBox: undefined,

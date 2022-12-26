@@ -14,19 +14,33 @@ Promise.all([
           style: {
             'width': ele => ele.outdegree() * 2 + ele.indegree() * 5,
             'height': ele => ele.outdegree() * 2 + ele.indegree() * 5,
-            'background-color': 'white',
+            'background-color': 'data(color)',
             'label': 'data(id)',
-            'font-size': '5px',
-            'color': 'white'
+            'font-size': '10px',
+            'text-border-width': '2px',
+            'text-border-color': 'black',
+            'text-border-opacity': '1',
+            'text-background-color': 'black',
+            'text-background-opacity': '0.4',
+            'color': 'white',
+            'shape': 'data(shape)',
+            'border-style': 'solid',
+            'border-color': 'data(border)',
+            'border-opacity': '1',
+            'border-width': '3px',
+            'text-valign': 'center',
+            'text-halign': 'center',
+            'text-wrap': 'ellipsis',
+            'text-max-width': ele => ele.outdegree() * 2 + ele.indegree() * 5,
           }
         },
 
         {
           selector: 'edge',
           style: {
-            'width': 'data(weight)',
+            'width': '2',
             'line-color': 'mapData(weight, 0, 5, gray, white)',
-            'target-arrow-color': '#ccc',
+            'target-arrow-color': 'mapData(weight, 0, 5, gray, white)',
             'target-arrow-shape': 'triangle',
             'curve-style': 'bezier'
           }
@@ -45,7 +59,7 @@ Promise.all([
         // true : Animate continuously as the layout is running
         // false : Just show the end result
         // 'end' : Animate with the end result, from the initial positions to the end positions
-        animate: false,
+        animate: true,
       
         // Easing of the animation for animate:'end'
         animationEasing: 200,
@@ -64,13 +78,13 @@ Promise.all([
         animationThreshold: 250,
       
         // Number of iterations between consecutive screen positions update
-        refresh: 10,
+        refresh: 50,
       
         // Whether to fit the network view after when done
-        fit: true,
+        fit: false,
       
         // Padding on fit
-        padding: 10,
+        padding: 20,
       
         // Constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
         boundingBox: undefined,
@@ -85,10 +99,10 @@ Promise.all([
         componentSpacing: 40,
       
         // Node repulsion (non overlapping) multiplier
-        nodeRepulsion: function( node ){ return 2048; },
+        nodeRepulsion: function( node ){ return 4098; },
       
         // Node repulsion (overlapping) multiplier
-        nodeOverlap: 4,
+        nodeOverlap: 8,
       
         // Ideal edge (non nested) length
         idealEdgeLength: function( edge ){ return 32; },
@@ -106,7 +120,7 @@ Promise.all([
         numIter: 2000,
       
         // Initial temperature (maximum node displacement)
-        initialTemp: 1000,
+        initialTemp: 3000,
       
         // Cooling factor (how the temperature is reduced between consecutive iterations
         coolingFactor: 0.99,

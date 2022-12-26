@@ -5,6 +5,7 @@ import networkx as nx
 import json
 import nltk
 from tqdm import tqdm
+import random
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 
@@ -21,7 +22,10 @@ G = nx.DiGraph()
 
 lem = nltk.stem.WordNetLemmatizer()
 
+r = lambda: random.randint(0,255)
+
 for index, row in tqdm(data.iterrows()):
+	G.add_node(row['title'], label=row['title'], color='lightgreen', border='darkgreen', shape='triangle')
 	output = query({'inputs': row['contents']})
 	new_ent_names = []
 	for out in output:
@@ -33,7 +37,8 @@ for index, row in tqdm(data.iterrows()):
 			new_ent_names.append(word)
 	for name in new_ent_names:
 		if name not in G.nodes:
-			G.add_node(name, label=name)
+			red, green, blue = r(), r(), r()
+			G.add_node(name, label=name, color=f'#{red:02X}{green:02X}{blue:02X}', border=f'#{red//2:02X}{green//2:02X}{blue//2:02X}', shape='ellipse')
 		if G.get_edge_data(row['title'], name) is None:
 			G.add_edge(row['title'], name, weight=1)
 		else:

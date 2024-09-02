@@ -1,6 +1,6 @@
-# KGene
+# knowledge-graf
 
-Knowledge graph generation from webcrawled natural language! [Usage](#Usage)
+Knowledge graph generation from webcrawled natural language!
 
 ![](img/cover.png)
 
@@ -12,7 +12,7 @@ cd kgene
 pip install -r requirements.txt
 npm install http-server -g
 
-# Crawl the desired webpage
+# Crawl the desired webpage (hope this works)
 scrapy crawl notes -a start_url=https://acquired.fm/episodes -a allowed_domain=acquired.fm -O webcrawling/notes.jl
 
 # Extract and save entities
@@ -24,4 +24,3 @@ python remove_nodes.py ben david marvel
 # Launch graph view (this might take a moment to load)
 http-server
 ```
-You should then be able to view the app at `http://127.0.0.1:8080`.

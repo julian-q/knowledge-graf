@@ -7,7 +7,7 @@ Knowledge graph generation from webcrawled natural language!
 ### Usage
 ```bash
 # Clone, install dependencies
-git clone https://github.com/julian-q/kgene.git
+git clone https://github.com/julian-q/knowledge-graf.git
 cd kgene
 pip install -r requirements.txt
 npm install http-server -g
